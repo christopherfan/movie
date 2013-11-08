@@ -13,7 +13,7 @@ pairlist = list(itertools.combinations(a,2))
 # <codecell>
 
 # number of pairs is 343K
-#len(pairlist)
+len(pairlist)
 
 # <codecell>
 
@@ -81,5 +81,29 @@ f.close()
 f = open('output.txt', 'w')
 for i in pair_distances:
     f.write(str(i)+"\n")
+f.close()
+
+# <codecell>
+
+#generates list of similar users for easy lookup
+similar_users = {}
+
+for i in pairlist:
+    similar_users[i[0]] = []
+    similar_users[i[1]] = []
+
+for i in pairlist:
+    if sum(similarity(user_data[i[0]], user_data[i[1]])) <= 25:
+       similar_users[i[0]].append(i[1])
+       similar_users[i[1]].append(i[0])
+        
+
+# <codecell>
+
+f = open("similar_users.txt","w")
+
+for k,v in similar_users.items():
+    f.write ( '{"'+str(k) +'": "' + str(v) + '"},\n' )
+    
 f.close()
 
