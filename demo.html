@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>Demo</title>
+		<!--<link rel="stylesheet" type="text/css" href="_css/style.css">-->
+		<script src="http://people.ischool.berkeley.edu/~vanessa/movies.jsonp"></script>
+	  <script src="_js/jquery-1.10.2.min.js"></script>
+	  <script src="_js/script.js"></script>
+	</head>
+
+	<body>
+
+		<form id="users-info">
+			<h3>User 1</h3>
+			<select id="age1">
+			  <option value="1">Less than 10</option>
+			  <option value="2">10-19</option>
+			  <option value="3" selected="selected">20-29</option>
+			  <option value="4">30-39</option>
+			  <option value="5">40-49</option>
+			  <option value="6">50-59</option>
+			  <option value="7">60-69</option>
+			  <option value="8">70+</option>
+			</select>
+
+			<select id="gender1">
+			  <option value="0" selected="selected">Male</option>
+			  <option value="1">Female</option>
+			</select>
+
+			<select id="occupation1">
+				<option value="1">administrator</option>
+				<option value="2">artist</option>
+				<option value="3">doctor</option>
+				<option value="4">educator</option>
+				<option value="5">engineer</option>
+				<option value="6">entertainment</option>
+				<option value="7">executive</option>
+				<option value="8">healthcare</option>
+				<option value="9">homemaker</option>
+				<option value="10">lawyer</option>
+				<option value="11">librarian</option>
+				<option value="12">marketing</option>
+				<option value="13">none</option>
+				<option value="14">other</option>
+				<option value="15">programmer</option>
+				<option value="16">retired</option>
+				<option value="17">salesman</option>
+				<option value="18">scientist</option>
+				<option value="19" selected="selected">student</option>
+				<option value="20">technician</option>
+				<option value="21">writer</option>
+			</select><br>
+
+			<h3>User 2</h3>
+			<select id="age2">
+			  <option value="1">Less than 10</option>
+			  <option value="2" selected="selected">10-19</option>
+			  <option value="3">20-29</option>
+			  <option value="4">30-39</option>
+			  <option value="5">40-49</option>
+			  <option value="6">50-59</option>
+			  <option value="7">60-69</option>
+			  <option value="8">70+</option>
+			</select>
+
+			<select id="gender2">
+			  <option value="0">Male</option>
+			  <option value="1" selected="selected">Female</option>
+			</select>
+
+			<select id="occupation2">
+				<option value="1">administrator</option>
+				<option value="2">artist</option>
+				<option value="3">doctor</option>
+				<option value="4">educator</option>
+				<option value="5">engineer</option>
+				<option value="6">entertainment</option>
+				<option value="7">executive</option>
+				<option value="8">healthcare</option>
+				<option value="9">homemaker</option>
+				<option value="10">lawyer</option>
+				<option value="11">librarian</option>
+				<option value="12">marketing</option>
+				<option value="13">none</option>
+				<option value="14">other</option>
+				<option value="15">programmer</option>
+				<option value="16">retired</option>
+				<option value="17">salesman</option>
+				<option value="18">scientist</option>
+				<option value="19" selected="selected">student</option>
+				<option value="20">technician</option>
+				<option value="21">writer</option>
+			</select><br>
+			
+			<input type="submit" value="Submit">
+
+		</form>
+
+
+		<div id="user1-rec">
+		</div><br>
+
+		<div id="both-rec"><h3>recommended movies</h3>
+		</div><br>
+
+		<div id="user2-rec">
+		</div><br>
+
+	</body>
+</html>
