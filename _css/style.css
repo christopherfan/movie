@@ -8,6 +8,33 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+
+div#pop-up {
+    display: none;
+    position:absolute;
+    color: white;
+    font-size: 14px;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px 5px 10px;
+    -moz-border-radius: 8px 8px;
+    border-radius: 8px 8px;
+  }
+  div#pop-up-title {
+    font-size: 15px;
+    width:200px;
+    margin-bottom: 4px;
+    font-weight: bolder;
+  }
+  div#pop-up-content {
+    font-size: 12px;
+  }
+  div#pop-desc {
+    width: 100px;
+  }
+  div#pop-img {
+    font-size: 30px;
+    font-weight: bolder;
+  }
 /*#container	{
 	background:#fff; 
 	box-shadow:0 0 20px #ccc; 
