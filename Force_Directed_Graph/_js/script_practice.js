@@ -2,13 +2,33 @@ $(document).ready(function() {
 
     console.log('ready');
 
+	$('#search_box').submit(function() {
+		$('#jQuery_send').text("jQuery sent: " + $('#search_text').val() );
+
+		$.ajax(
+		{
+		type: "GET",
+		url: "generate_json.py",
+		data: "stuff_for_python=" + $('#search_text').val(),
+		success: function(response)
+		{	
+			console.log(response);
+			$('#python_response').text("Python returned: " + response);
+		}
+		});
+		return false;
+	});	
+	
+	
     var width = 1000,
         height = 500;    
     var color = d3.scale.category20();
     
     var force = d3.layout.force()
-        .charge(-160)
-        .linkDistance(60)
+        .gravity(.1)
+		.charge(-100)
+        .linkDistance(30)
+		.alpha(.01)
         .size([width, height]);
 
     var svg = d3.select("main").append("svg")
@@ -22,13 +42,14 @@ $(document).ready(function() {
             .nodes(graph.nodes)
             .links(graph.links)
             .start();
+		
 
-        var link = svg.selectAll(".link")
-            .data(graph.links)
-            .enter().append("line")
-            .attr("class", "link")
-            .style("stroke-width", function (d) { return linkScale(d.value) });    
-
+		var link = svg.selectAll(".link")
+			.data(graph.links)
+			.enter().append("line")
+			.attr("class", "link")
+			.style("stroke-width", function (d) { return linkScale(d.value) });    
+		
         var node = svg.selectAll("node")
             .data(graph.nodes)            
             .enter()            
@@ -68,6 +89,7 @@ $(document).ready(function() {
         force.on("tick", function () {        
             node.attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; });
+				
 
             link.attr("x1", function (d) { return d.source.x; })
             .attr("y1", function (d) { return d.source.y; })
@@ -208,7 +230,8 @@ function colorNodes(links, nodes) {
     var temp ={};
     $.each(nodeGroups, function (index, value) {
         //console.log("Attach color", value, "to node", index);     
-        nodes[index].style.fill = color(value);
+		setTimeout(function() {
+        nodes[index].style.fill = color(value);}, 1000);
         var num_string = value.toString();
         
         if (nodeSets[num_string]==null) {
