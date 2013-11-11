@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Together</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="_css/bootstrap.min.css" rel="stylesheet">
+    <link href="_css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class="page-header">
+        <h1>Movie Together                <small>IO Lab Project 3</small></h1>
+        <span>Christopher F, Chalenge M, Kelly P, Vanessa M</span>
+      </div>
+      <div class="well">We will show you the movies that you and your friend would both like based on your info. <br>
+        Our sharedMovieTaste engine is based on demographic information of Movielens Data.
+      </div>
+      <div class="main">
+        <div class="col-md-6">
+          <form id="users-info">
+            <h3>Tell us about You</h3>
+            <label>Age</label>
+            <select id="age1">
+              <option value="1">Less than 10</option>
+              <option value="2">10-19</option>
+              <option value="3" selected="selected">20-29</option>
+              <option value="4">30-39</option>
+              <option value="5">40-49</option>
+              <option value="6">50-59</option>
+              <option value="7">60-69</option>
+              <option value="8">70+</option>
+            </select>
+
+            <label>Gender</label>
+            <select id="gender1">
+              <option value="0" selected="selected">Male</option>
+              <option value="1">Female</option>
+            </select>
+
+            <label>Occupation</label>
+            <select id="occupation1">
+              <option value="1">administrator</option>
+              <option value="2">artist</option>
+              <option value="3">doctor</option>
+              <option value="4">educator</option>
+              <option value="5">engineer</option>
+              <option value="6">entertainment</option>
+              <option value="7">executive</option>
+              <option value="8">healthcare</option>
+              <option value="9">homemaker</option>
+              <option value="10">lawyer</option>
+              <option value="11">librarian</option>
+              <option value="12">marketing</option>
+              <option value="13">none</option>
+              <option value="14">other</option>
+              <option value="15">programmer</option>
+              <option value="16">retired</option>
+              <option value="17">salesman</option>
+              <option value="18">scientist</option>
+              <option value="19" selected="selected">student</option>
+              <option value="20">technician</option>
+              <option value="21">writer</option>
+            </select><br>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <form>
+            <h3>...and your friend!</h3>
+            <label>Age</label>
+            <select id="age2">
+              <option value="1">Less than 10</option>
+              <option value="2" selected="selected">10-19</option>
+              <option value="3">20-29</option>
+              <option value="4">30-39</option>
+              <option value="5">40-49</option>
+              <option value="6">50-59</option>
+              <option value="7">60-69</option>
+              <option value="8">70+</option>
+            </select>
+
+            <label>Gender</label>
+            <select id="gender2">
+              <option value="0">Male</option>
+              <option value="1" selected="selected">Female</option>
+            </select>
+            
+            <label>Occupation</label>
+            <select id="occupation2">
+              <option value="1">administrator</option>
+              <option value="2">artist</option>
+              <option value="3">doctor</option>
+              <option value="4">educator</option>
+              <option value="5">engineer</option>
+              <option value="6">entertainment</option>
+              <option value="7">executive</option>
+              <option value="8">healthcare</option>
+              <option value="9">homemaker</option>
+              <option value="10">lawyer</option>
+              <option value="11">librarian</option>
+              <option value="12">marketing</option>
+              <option value="13">none</option>
+              <option value="14">other</option>
+              <option value="15">programmer</option>
+              <option value="16">retired</option>
+              <option value="17">salesman</option>
+              <option value="18">scientist</option>
+              <option value="19" selected="selected">student</option>
+              <option value="20">technician</option>
+              <option value="21">writer</option>
+            </select><br>
+            
+
+          </form>
+
+        </div>
+            <input type="submit" value="Submit">
+            <input type="button" value="Reset">
+
+      </div>
+
+
+
+    <div id="user1-rec">
+    </div><br>
+
+    <div id="both-rec"><h3>recommended movies</h3>
+    </div><br>
+
+    <div id="user2-rec">
+    </div><br>
+
+
+      
+
+      <svg id="visualization" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      </svg>
+      <div id="popup"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
