@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     d3.json("test.json", function (error, graph) {        
         var radiusScale = d3.scale.linear().domain([0, 5]).range([5, 10]);
-        var linkScale = d3.scale.linear().domain([0,10]).range([3,12])
+        var linkScale = d3.scale.linear().domain([0,10]).range([3,12]);
         force
             .nodes(graph.nodes)
             .links(graph.links)
