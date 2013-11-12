@@ -1,8 +1,6 @@
 var nodes = []
 
 function bubbles(list1, list2, list3) {
-    // test strings
-    var
 
     nodes = [];
     var allMovies = {};
@@ -20,48 +18,59 @@ function bubbles(list1, list2, list3) {
 	for (i=0; i<list3.length; i++) {
 	    user3movies.push(movies[list3[i]]);
 	}
-	console.log("User1 movies", user1movies);
-	console.log("User1 list", list1);
+
 	allMovies.user1 = user1movies;
 	allMovies.user2 = user2movies;
-	console.log("User2 movies", user2movies);
-	console.log("User2 list", list2);
 	allMovies.user3 = user3movies;
 
 	
+
+
 	console.log(allMovies);
 	var width = 1200,
-	    height = 500,
+	    height = 600,
 	    trans=[0,0],
 	    scale=1,
 	    nodes = [],
 	    i=0
 	    fill = ["blue", "orange", "red"] //d3.scale.category10(),
-	    foci = [{x: 300, y: 300}, {x: 600, y: 300}, {x: 900, y: 300}],
-	    radiuScale = d3.scale.linear().domain([0, 500]).range([3,50]);
+    foci = [{ x: 300, y: 400 }, { x: 600, y: 400 }, { x: 900, y: 400 }, { x: 300, y: 200 }, { x: 600, y: 200 }, { x: 900, y: 200 }],
+	    radiuScale = d3.scale.linear().domain([0, 500]).range([5,60]);
 
 
- 	 (allMovies.user1).forEach(function(o, i) {
- 	 	nodes.push({id: 0, movie: o});
+    (allMovies.user1).forEach(function (o, i) {
+        if (o.num_ratings > 100) {
+            nodes.push({ id: 3, movie: o });
+        }else{
+            nodes.push({id: 0, movie: o});
+        }
  	 });
  	 (allMovies.user2).forEach(function(o, i) {
- 	 	nodes.push({id: 1, movie: o});
+ 	     if (o.num_ratings > 100) {
+ 	         nodes.push({ id: 4, movie: o });
+ 	     } else {
+ 	         nodes.push({ id: 1, movie: o });
+ 	     }
  	 });
  	 (allMovies.user3).forEach(function(o, i) {
- 	 	nodes.push({id: 2, movie: o});
+ 	     if (o.num_ratings > 100) {
+ 	         nodes.push({ id: 5, movie: o });
+ 	     } else {
+ 	         nodes.push({ id: 2, movie: o });
+ 	     }
  	 });
 
 
 //d3.json("_js/movies.json", function(data) {
 //	user1Set = data.user1;
 	//console.log(data)
-	  var force = d3.layout.force()
-	    .nodes(nodes)
-	    .size([width, height])
-	    .gravity(0)
-	    .charge(-150)
-	    .alpha(-0.7)
-	    .start();
+ 	 var force = d3.layout.force()
+       .nodes(nodes)
+       .size([width, height])
+       .gravity(.01)
+       .charge(-150)
+       .alpha(-0.7);
+	    //.start();
 
 	  force.on("tick", function(e) {
 
@@ -78,14 +87,21 @@ function bubbles(list1, list2, list3) {
 	  });
 
 	  var canvas = d3.select("#visualization");
+	  canvas.on("mousemove", mousemove);
+
 	  
-	  canvas.attr("width", width).attr("height", height)
+	  canvas.attr("width", width).attr("height", height);
+
+	  var cursor = canvas.append("circle")
+      .attr("r", 30)
+      .attr("transform", "translate(-100,-100)")
+      .attr("class", "cursor");
 
 	  /*setInterval(function(){ 
 	  	if (i < data.lenght) {
 	  			nodes.push(data[i]);
 	  			i+=1;*/
-
+	  canvas.selectAll('.node').remove();
 	  var node = canvas.selectAll(".node")
         .data(nodes)
         .enter()
@@ -96,7 +112,7 @@ function bubbles(list1, list2, list3) {
               .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
               .style("fill", function (d) {
                   //console.log(d);
-                  return fill[d.id];
+                  return fill[d.id%3];
               })
               .on("mouseover", mouseover)
               .on("click", click)
@@ -119,11 +135,28 @@ function bubbles(list1, list2, list3) {
 	  		});
 	  	}
 
-	  		    function click(d) {
-	  				window.open(d.movie.imdb);
-	  			}
-	  	//}
+	  	function click(d) {
+	  		window.open(d.movie.imdb);
+	  	}
 
-	//});
 
+
+	  	restart();
+
+	  	function mousemove() {
+	  		cursor.attr("transform", "translate(" + d3.mouse(this) + ")");
+	  	}
+
+	  	function restart() {
+
+	  		node = node.data(nodes);
+
+	  		node.enter().insert("circle", ".cursor")
+                .attr("class", "node")
+                .attr("r", 5)
+                .call(force.drag);
+
+	  		force.start();
+	  	}
 }
+
