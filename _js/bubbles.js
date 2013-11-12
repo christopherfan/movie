@@ -1,4 +1,24 @@
-function bubbles (allMovies) {
+function bubbles (list1, list2, list3) {
+	var allMovies = {};
+	var user1movies = []
+	for (i=0; i<list1.length; i++) {
+		user1movies.push(movies[i])
+	}
+
+	var user2movies = []
+	for (i=0; i<list2.length; i++) {
+		user2movies.push(movies[i])
+	}
+
+	var user3movies = []
+	for (i=0; i<list3.length; i++) {
+		user3movies.push(movies[i])
+	}
+
+	allMovies.user1 = user1movies
+	allMovies.user2 = user2movies
+	allMovies.user3 = user3movies
+
 	var width = 1060,
 	    height = 500,
 	    trans=[0,0],
@@ -35,7 +55,7 @@ function bubbles (allMovies) {
 
 	      // Push nodes toward their designated focus.
 	      var k = .1 * e.alpha;
-	      nodes.forEach(function(o, i) {
+	      nodes.forEach/(function(o, i) {
 	        o.y += (foci[o.id].y - o.y) * k;
 	        o.x += (foci[o.id].x - o.x) * k;
 	      });
@@ -61,7 +81,7 @@ function bubbles (allMovies) {
 	  		            .attr("class", "node")
 	  		            .attr("cx", function(d) { return d.x; })
 	  		            .attr("cy", function(d) { return d.y; })
-	  		            .attr("r", function(d) { return radiuScale(d.movie.ratings); })
+	  		            .attr("r", function(d) { return radiuScale(d.movie.num_ratings); })
 	  		            .style("fill", function(d) { console.log(d); return fill[d.id]; })
 	  		            .on("mouseover", mouseover)
 	  		            .on("click", click)
@@ -73,7 +93,7 @@ function bubbles (allMovies) {
 	  		          $("#pop-up").fadeOut(100,function () {
 	  		              // Popup content
 	  		              $("#pop-up-title").html(d.movie.title);
-	  		              $("#pop-img").html(d.movie.ratings);
+	  		              $("#pop-img").html(d.movie.num_ratings);
 	  		              $("#pop-desc").html(d.movie.imdb);
 
 	  		              // Popup position

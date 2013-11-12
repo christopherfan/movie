@@ -8,8 +8,11 @@
     <link href="_css/style.css" rel="stylesheet">
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="_js/jquery-1.10.2.min.js"></script>
+    <script src="http://people.ischool.berkeley.edu/~vanessa/movies.jsonp"></script>
     <script type="text/javascript" src="_js/bubbles.js"></script>
     <script type="text/javascript" src="_js/script.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="_js/bootstrap.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +34,7 @@
           <form id="users-info">
             <h3>Tell us about You</h3>
             <label>Age</label>
-            <div class="btn-group" id="age1">
+            <div class="btn-group" id="btnage1">
               <button type="button" class="btn btn-default" value="1">10</button>
               <button type="button" class="btn btn-default">20</button>
               <button type="button" class="btn btn-default">30</button>
@@ -127,29 +130,16 @@
               <option value="20">technician</option>
               <option value="21">writer</option>
             </select><br>
-            
+        </div>
+            <input id = "submit-btn" type="submit" value="Submit">
+            <input type="button" value="Reset">
+
+      </div>       
 
           </form>
 
-        </div>
-            <!--<input id = "submit-btn" type="submit" value="Submit">
-            <input type="button" value="Reset">-->
+     
 
-      </div>
-
-
-
-    <div id="user1-rec">
-    </div><br>
-
-    <div id="both-rec"><h3>recommended movies</h3>
-    </div><br>
-
-    <div id="user2-rec">
-    </div><br>
-
-
-      
 
       <svg id="visualization" xmlns="http://www.w3.org/2000/svg" version="1.1">
       </svg>
@@ -163,18 +153,8 @@
           </div>
       </div>
 
-<<<<<<< HEAD:index_kp_dec.html
-    <script src="http://people.ischool.berkeley.edu/~vanessa/movies.jsonp"></script>
-    <script src="_js/jquery-1.10.2.min.js"></script>
 
-    <script src="_js/bootstrap.min.js"></script>
-    <script src="_js/script.js"></script>
-=======
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="_js/bootstrap.min.js"></script>
->>>>>>> a1d7b7fb1330a4617076f3247e1fa9191ef89d72:index_kp.html
+
 
   </body>
 </html>
