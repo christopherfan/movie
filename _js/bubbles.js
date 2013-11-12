@@ -68,7 +68,7 @@ function bubbles(list1, list2, list3) {
        .nodes(nodes)
        .size([width, height])
        .gravity(.01)
-       .charge(-150)
+       .charge(-100)
        .alpha(-0.7);
 	    //.start();
 
@@ -114,6 +114,7 @@ function bubbles(list1, list2, list3) {
                   //console.log(d);
                   return fill[d.id%3];
               })
+			  .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
               .on("mouseover", mouseover)
               .on("click", click)
               .call(force.drag);

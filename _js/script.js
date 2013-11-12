@@ -78,9 +78,9 @@ $(document).ready(function() {
         }
 
 
-        top_both = both.sort(sortNumber).reverse().slice(0,20);
-        top_user1 = only_user1.slice(0,20);
-        top_user2 = only_user2.slice(0,20);
+        top_both = both.sort(sortNumber).reverse().slice(0,30);
+        top_user1 = only_user1.slice(0,30);
+        top_user2 = only_user2.slice(0,30);
 
         function sortNumber(a,b) {
 					return a[0] - b[0];
