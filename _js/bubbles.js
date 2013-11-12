@@ -116,6 +116,7 @@ function bubbles(list1, list2, list3) {
               })
 			  .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
               .on("mouseover", mouseover)
+              .on("mouseout", mouseout)
               .on("click", click)
               .call(force.drag);
 	  		      	
@@ -134,6 +135,11 @@ function bubbles(list1, list2, list3) {
 	  		    $("#pop-up").css({"left":popLeft,"top":popTop});
 	  		    $("#pop-up").fadeIn(100);
 	  		});
+	  	}
+
+	  	function mouseout(d) {
+	  	        $("#pop-up").fadeOut(500);
+	  	        d3.select(this).attr("fill","url(#ten1)");
 	  	}
 
 	  	function click(d) {
