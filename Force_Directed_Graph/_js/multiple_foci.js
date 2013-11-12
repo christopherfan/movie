@@ -41,7 +41,7 @@ force.on("tick", function(e) {
 	setInterval(function(){
 
 		  
-		  nodes.push({id: ~~(Math.random() * foci.length), "movie":sample_movies[0]});		  
+		  nodes.push({id: ~~(Math.random() * foci.length});		  
 		  force.start();
 		  
 		  vis.selectAll("circle.node")
