@@ -6,6 +6,10 @@
     <!-- Bootstrap -->
     <link href="_css/bootstrap.min.css" rel="stylesheet">
     <link href="_css/style.css" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="_js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="_js/bubbles.js"></script>
+    <script type="text/javascript" src="_js/script.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -128,8 +132,8 @@
           </form>
 
         </div>
-            <input type="submit" value="Submit">
-            <input type="button" value="Reset">
+            <!--<input id = "submit-btn" type="submit" value="Submit">
+            <input type="button" value="Reset">-->
 
       </div>
 
@@ -149,13 +153,28 @@
 
       <svg id="visualization" xmlns="http://www.w3.org/2000/svg" version="1.1">
       </svg>
-      <div id="popup"></div>
+      <div id="pop-up">
+          <div id="pop-up-title"></div>
+          <div id="pop-up-content">
+              <table> <tr>
+                  <td><div id="pop-img"></div></td>
+                  <td><div id="pop-desc"></div></td>
+              </tr> </table>
+          </div>
+      </div>
 
+<<<<<<< HEAD:index_kp_dec.html
     <script src="http://people.ischool.berkeley.edu/~vanessa/movies.jsonp"></script>
     <script src="_js/jquery-1.10.2.min.js"></script>
 
     <script src="_js/bootstrap.min.js"></script>
     <script src="_js/script.js"></script>
+=======
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="_js/bootstrap.min.js"></script>
+>>>>>>> a1d7b7fb1330a4617076f3247e1fa9191ef89d72:index_kp.html
 
   </body>
 </html>
