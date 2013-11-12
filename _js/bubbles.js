@@ -1,24 +1,35 @@
+var nodes = []
+
 function bubbles(list1, list2, list3) {
-	var allMovies = {};
-	var user1movies = []
+    // test strings
+    var
+
+    nodes = [];
+    var allMovies = {};
+    var user1movies = [];
 	for (i=0; i<list1.length; i++) {
-		user1movies.push(movies[i])
+	    user1movies.push(movies[list1[i]]);
 	}
 
-	var user2movies = []
+	var user2movies = [];
 	for (i=0; i<list2.length; i++) {
-		user2movies.push(movies[i])
+	    user2movies.push(movies[list2[i]]);
 	}
 
-	var user3movies = []
+	var user3movies = [];
 	for (i=0; i<list3.length; i++) {
-		user3movies.push(movies[i])
+	    user3movies.push(movies[list3[i]]);
 	}
+	console.log("User1 movies", user1movies);
+	console.log("User1 list", list1);
+	allMovies.user1 = user1movies;
+	allMovies.user2 = user2movies;
+	console.log("User2 movies", user2movies);
+	console.log("User2 list", list2);
+	allMovies.user3 = user3movies;
 
-	allMovies.user1 = user1movies
-	allMovies.user2 = user2movies
-	allMovies.user3 = user3movies
-
+	
+	console.log(allMovies);
 	var width = 1200,
 	    height = 500,
 	    trans=[0,0],
@@ -27,7 +38,7 @@ function bubbles(list1, list2, list3) {
 	    i=0
 	    fill = ["blue", "orange", "red"] //d3.scale.category10(),
 	    foci = [{x: 300, y: 300}, {x: 600, y: 300}, {x: 900, y: 300}],
-	    radiuScale = d3.scale.linear().domain([0, 500]).range([8,40]);
+	    radiuScale = d3.scale.linear().domain([0, 500]).range([3,50]);
 
 
  	 (allMovies.user1).forEach(function(o, i) {
@@ -39,6 +50,7 @@ function bubbles(list1, list2, list3) {
  	 (allMovies.user3).forEach(function(o, i) {
  	 	nodes.push({id: 2, movie: o});
  	 });
+
 
 //d3.json("_js/movies.json", function(data) {
 //	user1Set = data.user1;
@@ -82,28 +94,30 @@ function bubbles(list1, list2, list3) {
               .attr("cx", function (d) { return d.x; })
               .attr("cy", function (d) { return d.y; })
               .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
-              .style("fill", function (d) { console.log(d); return fill[d.id]; })
+              .style("fill", function (d) {
+                  //console.log(d);
+                  return fill[d.id];
+              })
               .on("mouseover", mouseover)
               .on("click", click)
               .call(force.drag);
-	  		      
-	  		   
+	  		      	
 
-	  		      function mouseover(d) {
-	  		          $("#pop-up").fadeOut(100,function () {
-	  		              // Popup content
-	  		              $("#pop-up-title").html(d.movie.title);
-	  		              $("#pop-img").html(d.movie.num_ratings);
-	  		              $("#pop-desc").html(d.movie.imdb);
+	  	function mouseover(d) {
+	  		$("#pop-up").fadeOut(100,function () {
+	  		    // Popup content
+	  		    $("#pop-up-title").html(d.movie.title);
+	  		    $("#pop-img").html(d.movie.num_ratings);
+	  		    $("#pop-desc").html(d.movie.imdb);
 
-	  		              // Popup position
-	  		              var popLeft = (d.x*scale)+trans[0]+70;//lE.cL[0] + 20;
-	  		              var popTop = (d.y*scale)+trans[1]+420;//lE.cL[1] + 70;
-	  		              console.log(d.x, d.y, popLeft, popTop);
-	  		              $("#pop-up").css({"left":popLeft,"top":popTop});
-	  		              $("#pop-up").fadeIn(100);
-	  		          });
-	  		      }
+	  		    // Popup position
+	  		    var popLeft = (d.x*scale)+trans[0]+70;//lE.cL[0] + 20;
+	  		    var popTop = (d.y*scale)+trans[1]+420;//lE.cL[1] + 70;
+	  		    //console.log(d.x, d.y, popLeft, popTop);
+	  		    $("#pop-up").css({"left":popLeft,"top":popTop});
+	  		    $("#pop-up").fadeIn(100);
+	  		});
+	  	}
 
 	  		    function click(d) {
 	  				window.open(d.movie.imdb);
