@@ -91,7 +91,7 @@ function bubbles(list1, list2, list3) {
 
 	  
 	  canvas.attr("width", width).attr("height", height);
-
+	  canvas.selectAll('circle').remove();
 	  var cursor = canvas.append("circle")
       .attr("r", 30)
       .attr("transform", "translate(-100,-100)")
@@ -101,7 +101,7 @@ function bubbles(list1, list2, list3) {
 	  	if (i < data.lenght) {
 	  			nodes.push(data[i]);
 	  			i+=1;*/
-	  canvas.selectAll('.node').remove();
+	  
 	  var node = canvas.selectAll(".node")
         .data(nodes)
         .enter()
