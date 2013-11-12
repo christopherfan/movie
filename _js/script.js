@@ -1,4 +1,4 @@
-// Variables to hold data from movies.jsonp file
+ //Variables to hold data from movies.jsonp file
 var movies = movies_json;
 var similar_users = similar_users_json;
 var users_movies = users_movies_json;
@@ -108,7 +108,12 @@ $(document).ready(function() {
 				console.log("User2: " + recommended_user2);
 
 
-			bubbles(recommended_user1,recommended_user2,recommended_both);
+        bubbles(recommended_user1,recommended_user2,recommended_both);
+
+				//d3.json("_js/movies.json", function (data) {
+				//    console.log(data);
+				//    bubbles(data);
+				//});
     	
     	return false;
     	event.preventDefault();	

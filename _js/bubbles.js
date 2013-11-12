@@ -1,4 +1,4 @@
-function bubbles (list1, list2, list3) {
+function bubbles(list1, list2, list3) {
 	var allMovies = {};
 	var user1movies = []
 	for (i=0; i<list1.length; i++) {
@@ -19,14 +19,14 @@ function bubbles (list1, list2, list3) {
 	allMovies.user2 = user2movies
 	allMovies.user3 = user3movies
 
-	var width = 1060,
+	var width = 1200,
 	    height = 500,
 	    trans=[0,0],
 	    scale=1,
 	    nodes = [],
 	    i=0
 	    fill = ["blue", "orange", "red"] //d3.scale.category10(),
-	    foci = [{x: 250, y: 300}, {x: 550, y: 300}, {x: 850, y: 300}],
+	    foci = [{x: 300, y: 300}, {x: 600, y: 300}, {x: 900, y: 300}],
 	    radiuScale = d3.scale.linear().domain([0, 500]).range([8,40]);
 
 
@@ -55,7 +55,7 @@ function bubbles (list1, list2, list3) {
 
 	      // Push nodes toward their designated focus.
 	      var k = .1 * e.alpha;
-	      nodes.forEach/(function(o, i) {
+	      nodes.forEach(function(o, i) {
 	        o.y += (foci[o.id].y - o.y) * k;
 	        o.x += (foci[o.id].x - o.x) * k;
 	      });
@@ -74,18 +74,18 @@ function bubbles (list1, list2, list3) {
 	  			nodes.push(data[i]);
 	  			i+=1;*/
 
-	  		  	var node =canvas.selectAll(".node")
-	  		      .data(nodes)
-	  		      .enter()
-	  		            .append("circle")
-	  		            .attr("class", "node")
-	  		            .attr("cx", function(d) { return d.x; })
-	  		            .attr("cy", function(d) { return d.y; })
-	  		            .attr("r", function(d) { return radiuScale(d.movie.num_ratings); })
-	  		            .style("fill", function(d) { console.log(d); return fill[d.id]; })
-	  		            .on("mouseover", mouseover)
-	  		            .on("click", click)
-	  		            .text()
+	  var node = canvas.selectAll(".node")
+        .data(nodes)
+        .enter()
+              .append("circle")
+              .attr("class", "node")
+              .attr("cx", function (d) { return d.x; })
+              .attr("cy", function (d) { return d.y; })
+              .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
+              .style("fill", function (d) { console.log(d); return fill[d.id]; })
+              .on("mouseover", mouseover)
+              .on("click", click)
+              .call(force.drag);
 	  		      
 	  		   
 
