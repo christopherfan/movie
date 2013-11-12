@@ -40,16 +40,17 @@ textarea											{}
 
 /* container */
 
-#container											{margin:0 auto; width:800px;}
+#container											{margin:0 auto; width:1000px;}
 
 
 
 /* main */
 
-main												{background:#fff; width:800px;}
+main												{background:#fff; width:1000px;}
 
-
-
+/*data_overlay*/
+#data_overlay                                       {margin:0 auto;background:#C0C0C0; height:300px; width:1000px;}
+.chart                                              {background: #fff;}
 /* misc */
 
 strong											    {font-weight:bold;}
