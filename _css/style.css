@@ -47,3 +47,14 @@ div#pop-up {
   stroke: brown;
   pointer-events: none;
 }
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+text.shadow {
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-opacity: .8;
+}   
