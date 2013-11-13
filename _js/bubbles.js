@@ -116,8 +116,8 @@ function bubbles(list1, list2, list3) {
 	  		    $("#pop-desc").html(d.movie.imdb);
 
 	  		    // Popup position is aligned next to the node the mouse is over
-	  		    var popLeft = (d.x*scale)+trans[0]+70;
-	  		    var popTop = (d.y*scale)+trans[1]+420;
+	  		    var popLeft = (d.x*scale)+trans[0]+90;
+	  		    var popTop = (d.y*scale)+trans[1]+510;
 
 	  		    $("#pop-up").css({"left":popLeft,"top":popTop});
 	  		    $("#pop-up").fadeIn(200);
