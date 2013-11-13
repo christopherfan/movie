@@ -8,10 +8,6 @@ body {
   text-align: center;
 }
 
-div#main {
-  border: #ccc solid 1px;
-  }
-
 div#pop-up {
     display: none;
     position:absolute;
