@@ -44,6 +44,7 @@ $(document).ready(function() {
     // console.log(user2_data, user1_data);
     });
 
+    $("#movie-types").hide();
 
     // ------------
    
@@ -51,6 +52,8 @@ $(document).ready(function() {
     // recommended movies for user1, user2, and movies both users will like. 
     // Then display the movie data in the visualization canvas.
     $(document).submit( function () {
+
+        $("#movie-types").show();
 
        
         user1 = user1_data.join(",") ;
@@ -140,7 +143,8 @@ $(document).ready(function() {
 				console.log("User2: " + recommended_user2);
 
 
-        bubbles(recommended_user1,recommended_user2,recommended_both);
+
+        bubbles(recommended_user1,recommended_both, recommended_user2);
 
 				//d3.json("_js/movies.json", function (data) {
 				//    console.log(data);
