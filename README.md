@@ -27,18 +27,17 @@ http://people.ischool.berkeley.edu/~chrisfan/IOLabPJ3/index_kp_dec.html
 
 #### Files
 HTML: 
-index_kp_dec.html > Forms and SVG canvas
+* index_kp_dec.html > Forms and SVG canvas
 
 CSS: 
-Using Bootstrap
-_css/style.css
+* Using Bootstrap
+* _css/style.css > CSS Styles
 
 
 Javascript: 
-Using Jquery and D3
-_js/script.js > Event Handlers and Data Manipulation
-_js/bubbles.js > D3 visualization
-
+* Using Jquery and D3
+* _js/script.js > Event Handlers and Data Manipulation
+* _js/bubbles.js > D3 visualization
 
 Data:
 http://people.ischool.berkeley.edu/~vanessa/movies.jsonp >> List of movies and data
