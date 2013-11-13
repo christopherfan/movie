@@ -4,13 +4,7 @@ var similar_users = similar_users_json;
 var users_movies = users_movies_json;
 
 $(document).ready(function() {
-    	// -----------
-    var gender1 = -1;
-    var age1 = -1;
-    var job1 = -1;
-    var gender2 = -1;
-    var age2 = -1;
-    var job2 = -1;
+    	// ----------- var initialization
 
     var user1_data = [];
     var user2_data = [];
@@ -58,17 +52,7 @@ $(document).ready(function() {
     // Then display the movie data in the visualization canvas.
     $(document).submit( function () {
 
-    		// // Get users information and find their similar users
-    		// var user1_data = [];
-    		// var user2_data = [];
-        
-      //   user1_data.push( Number($("#age1").val()) );
-      //   user1_data.push( Number($("#gender1").val()) );
-      //   user1_data.push( Number($("#occupation1").val()) );
-      //   user2_data.push( Number($("#age2").val()) );
-      //   user2_data.push( Number($("#gender2").val()) );
-      //   user2_data.push( Number($("#occupation2").val()) );
-        
+       
         user1 = user1_data.join(",") ;
         user2 = user2_data.join(",") ;
 
