@@ -25,66 +25,68 @@
         Our sharedMovieTaste engine is based on demographic information of Movielens Data.
       </div>
       <div class="main">
-        <div class="col-md-6">
+        <div class="col-md-4">
 
-          <form id="users-info" method="POST">
+          <form role="form" id="users-info" method="POST">
             <h3>Tell us about You</h3>
-            <p>
-            <label>Age  </label>
-            <input id="age-text1" name="age" type='text' />
-            </p>
-            <p>
-            <label>Gender  </label>
-            <input class="gender-radio-buttons1" id="gender-radio-0" name="gender" type="radio" value="0" /><label for="gender-radio-0"> Male</label>
-            <input class="gender-radio-buttons1" id="gender-radio-1" name="gender" type="radio" value="1" /><label for="gender-radio-1"> Female</label>
-            </p>
-            <p>
-            <label>Occupation  </label>
-            <select id="occupation1">
-              <option value="0"></option>
-              <option value="1">administrator</option>
-              <option value="2">artist</option>
-              <option value="3">doctor</option>
-              <option value="4">educator</option>
-              <option value="5">engineer</option>
-              <option value="6">entertainment</option>
-              <option value="7">executive</option>
-              <option value="8">healthcare</option>
-              <option value="9">homemaker</option>
-              <option value="10">lawyer</option>
-              <option value="11">librarian</option>
-              <option value="12">marketing</option>
-              <option value="13">none</option>
-              <option value="14">other</option>
-              <option value="15">programmer</option>
-              <option value="16">retired</option>
-              <option value="17">salesman</option>
-              <option value="18">scientist</option>
-              <option value="19">student</option>
-              <option value="20">technician</option>
-              <option value="21">writer</option>
-            </select><br>
+            <div class="form-group">
+              <label>Age  </label>
+              <input id="age-text1" name="age" type='text' class="form-control" />
+            </div>
+            <div class="form-group">
+              <label >Gender <br> </label><p>
+              <input class="gender-radio-buttons1" id="gender-radio-0" name="gender" type="radio" value="0" /><label for="gender-radio-0"> Male</label>
+              <input class="gender-radio-buttons1" id="gender-radio-1" name="gender" type="radio" value="1" /><label for="gender-radio-1"> Female</label></p>
+            </div>
+            <div class="form-group" >
+              <label>Occupation  </label>
+              <select id="occupation1" class="form-control">
+                <option value="0"></option>
+                <option value="1">administrator</option>
+                <option value="2">artist</option>
+                <option value="3">doctor</option>
+                <option value="4">educator</option>
+                <option value="5">engineer</option>
+                <option value="6">entertainment</option>
+                <option value="7">executive</option>
+                <option value="8">healthcare</option>
+                <option value="9">homemaker</option>
+                <option value="10">lawyer</option>
+                <option value="11">librarian</option>
+                <option value="12">marketing</option>
+                <option value="13">none</option>
+                <option value="14">other</option>
+                <option value="15">programmer</option>
+                <option value="16">retired</option>
+                <option value="17">salesman</option>
+                <option value="18">scientist</option>
+                <option value="19">student</option>
+                <option value="20">technician</option>
+                <option value="21">writer</option>
+              </select>
+          </div>
 
           </form>
         </div>
-        <div class="col-md-6">
-          <form id="users-info" method="POST">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <form role="form" id="users-info" method="POST">
             <h3>...and your friend!</h3>
-            <p>
-            <label>Age  </label>
-            <input id="age-text2" name="age" type='text' />
-            </p>
-            <p>
+            <div class="form-group">
+            <label>Age </label>
+            <input id="age-text2" name="age" type='text' class="form-control" />
+            </div>
+            <div class="form-group">
 
-            <label>Gender  </label>
+            <label>Gender</label>
+            <p>
             <input class="gender-radio-buttons2" id="gender-radio-0" name="gender" type="radio" value="0" /><label for="gender-radio-0"> Male</label>
             <input class="gender-radio-buttons2" id="gender-radio-1" name="gender" type="radio" value="1" /><label for="gender-radio-1"> Female</label>
             </p>
-            <p>
-
-
-            <label>Occupation  </label>
-            <select id="occupation2">
+            </div>
+            <div class="form-group">
+            <label>Occupation</label>
+            <select id="occupation2" class="form-control" >
               <option value="0"></option>
               <option value="1">administrator</option>
               <option value="2">artist</option>
@@ -107,20 +109,35 @@
               <option value="19">student</option>
               <option value="20">technician</option>
               <option value="21">writer</option>
-            </select><br>
-          </p>
+            </select>
+          </div>
           </form>
         </div>
-        <div>
-          <form>
-          <input class="btn btn-default" type="submit" value=" Find Movies! ">
-          </form>
-        </div>
-
-
       </div>       
+        <div class="col-md-3">
+          <div class="panel panel-default"><div class="panel-body">
+            Based on information you provided here, we will visualize the movies that someone like you or your friend rated high. Explore and discover new movies that both of you and your frield will love!
+          </div></div>
+            <div class="form-group">
+              <form role="form" >
+                <input class="btn btn-default btn-lg" type="submit" value=" Discover Movies! ">
+              </form>
+            </div>
+        </div>
 
+        <div id = "lables">
+          <div class="col-md-4" id="category1">
+            <!-- The movies you will love -->
+          </div>
 
+          <div class="col-md-4" id="category2">
+            <!-- The movies both will love -->
+          </div>
+
+          <div class="col-md-4" id="category3">
+            <!-- The movies your friend will love -->
+          </div>
+        </div>
 
      
 

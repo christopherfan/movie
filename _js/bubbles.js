@@ -36,7 +36,8 @@ function bubbles(list1, list2, list3) {
 	    scale=1,
 	    nodes = [],
 	    i=0
-	    fill = ["blue", "orange", "red"] //d3.scale.category10(),
+	    fill = ["lightcoral", "goldenrod", "steelblue"]
+	    // fill = ["blue", "orange", "red"] //d3.scale.category10(),
 		// foci are the points around the svg canvas where the node clusters will gather around
 		foci = [{ x: 300, y: 300 }, { x: 600, y: 300 }, { x: 900, y: 300 }, { x: 300, y: 200 }, { x: 600, y: 200 }, { x: 900, y: 200 }],
 	    radiuScale = d3.scale.linear().domain([0, 500]).range([5,60]);
@@ -99,7 +100,7 @@ function bubbles(list1, list2, list3) {
             //console.log(d);
             return fill[d.id%3];
         })
-    	.style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
+    	// .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
         .on("click", click)

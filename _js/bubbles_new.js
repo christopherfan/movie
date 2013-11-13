@@ -33,7 +33,9 @@ function bubbles(list1, list2, list3) {
 	    scale=1,
 	    nodes = [],
 	    i=0
-	    fill = ["blue", "orange", "red"] //d3.scale.category10(),
+    // var color_scale = d3.scale.category20b();
+	    fill = ["lightcoral", "plum", "steelblue"] //d3.scale.category10(),
+	    // fill = [color_scale(2), color_scale(11),color_scale(20),]
     foci = [{ x: 300, y: 400 }, { x: 600, y: 400 }, { x: 900, y: 400 }, { x: 300, y: 300 }, { x: 600, y: 300 }, { x: 900, y: 300 }],
 	    radiuScale = d3.scale.linear().domain([0, 500]).range([5,60]);
 

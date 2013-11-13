@@ -4,6 +4,8 @@ var similar_users = similar_users_json;
 var users_movies = users_movies_json;
 
 $(document).ready(function() {
+
+     $('.btn-group').button()
     	// ----------- var initialization
 
     var user1_data = [];
@@ -18,7 +20,7 @@ $(document).ready(function() {
     $(".gender-radio-buttons1").click(function() {   //  CALLED WHEN ANY of gender-radio-buttons IS CLICKED.
     var value = $(this).prop("value");
     user1_data[1]=(parseInt(value));   //  TURN value INTO INTEGER
-    // console.log("clicked radio button1's value: " + user1_data);
+    console.log("clicked radio button1's value: " + user1_data);
 
     });
 
@@ -52,7 +54,10 @@ $(document).ready(function() {
     // Then display the movie data in the visualization canvas.
     $(document).submit( function () {
 
-       
+        $("#category1").html("The movies YOU will love");
+        $("#category2").html("The movies BOTH will love");
+        $("#category3").html("The movies your FRIEND will love");
+
         user1 = user1_data.join(",") ;
         user2 = user2_data.join(",") ;
 
