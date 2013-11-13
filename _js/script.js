@@ -7,47 +7,50 @@ $(document).ready(function() {
     	// -----------
     var gender1 = -1;
     var age1 = -1;
-    var job1 = 19;
+    var job1 = -1;
     var gender2 = -1;
     var age2 = -1;
-    var job2 = 19;
+    var job2 = -1;
 
     var user1_data = [];
     var user2_data = [];
 
     $("#age-text1").change(function() {  //  CALLED WHEN age-text IS CHANGED.
-    raw = $("#age-text1").val();
-    var age1 = parseInt(raw / 10) + 1;
-    // console.log("age1: " + age1);
+    var raw = $("#age-text1").val();
+    user1_data[0] = (parseInt(raw / 10) + 1);
+    // console.log("age1: " + user1_data);
     });
 
     $(".gender-radio-buttons1").click(function() {   //  CALLED WHEN ANY of gender-radio-buttons IS CLICKED.
     var value = $(this).prop("value");
-    // console.log("clicked radio button1's value: " + value);
-    gender1 = parseInt(value);   //  TURN value INTO INTEGER
+    user1_data[1]=(parseInt(value));   //  TURN value INTO INTEGER
+    // console.log("clicked radio button1's value: " + user1_data);
+
     });
 
     $("#occupation1").change(function() {  //  CALLED WHEN job-select IS CHANGED.
-            job1 = $("#occupation1").val();
+    user1_data[2]=( Number($("#occupation1").val()) );
             // console.log("job1: " + job1);
     });
-
     $("#age-text2").change(function() {  //  CALLED WHEN age-text IS CHANGED.
-    raw = $("#age-text2").val();
-    var age2 = parseInt(raw / 10) + 1;
+    var raw = $("#age-text2").val();
+    user2_data[0]=(parseInt(raw / 10) + 1);
     // console.log("age2: " + age2);
     });
 
     $(".gender-radio-buttons2").click(function() {   //  CALLED WHEN ANY of gender-radio-buttons IS CLICKED.
     var value = $(this).prop("value");
     // console.log("clicked radio button2's value: " + value);
-    gender2 = parseInt(value);   //  TURN value INTO INTEGER
+    user2_data[1]=(parseInt(value));   //  TURN value INTO INTEGER
     });
 
     $("#occupation2").change(function() {  //  CALLED WHEN job-select IS CHANGED.
-            job2 = $("#occupation2").val();
+    user2_data[2]=( Number($("#occupation2").val()) );
             // console.log("job2: " + job2);
+    // console.log(user2_data, user1_data);
     });
+
+
     // ------------
    
     // Based on users input, lookup users they are similar to, generate list of
@@ -55,16 +58,16 @@ $(document).ready(function() {
     // Then display the movie data in the visualization canvas.
     $(document).submit( function () {
 
-    		// Get users information and find their similar users
-    		var user1_data = [];
-    		var user2_data = [];
+    		// // Get users information and find their similar users
+    		// var user1_data = [];
+    		// var user2_data = [];
         
-        user1_data.push( Number($("#age1").val()) );
-        user1_data.push( Number($("#gender1").val()) );
-        user1_data.push( Number($("#occupation1").val()) );
-        user2_data.push( Number($("#age2").val()) );
-        user2_data.push( Number($("#gender2").val()) );
-        user2_data.push( Number($("#occupation2").val()) );
+      //   user1_data.push( Number($("#age1").val()) );
+      //   user1_data.push( Number($("#gender1").val()) );
+      //   user1_data.push( Number($("#occupation1").val()) );
+      //   user2_data.push( Number($("#age2").val()) );
+      //   user2_data.push( Number($("#gender2").val()) );
+      //   user2_data.push( Number($("#occupation2").val()) );
         
         user1 = user1_data.join(",") ;
         user2 = user2_data.join(",") ;
