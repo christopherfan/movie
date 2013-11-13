@@ -81,6 +81,7 @@ function bubbles(list1, list2, list3) {
 	        o.x += (foci[o.id].x - o.x) * k;
 	      });
 
+	      canvas.selectAll(".node").attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 	      canvas.selectAll("circle.node")
 	          .attr("cx", function(d) { return d.x; })
 	          .attr("cy", function(d) { return d.y; });
@@ -99,22 +100,30 @@ function bubbles(list1, list2, list3) {
 
 	  var node = canvas.selectAll(".node")
         .data(nodes)
-        .enter()
-              .append("circle")
-              .attr("class", "node")
-              .attr("cx", function (d) { return d.x; })
-              .attr("cy", function (d) { return d.y; })
-              .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
-              .style("fill", function (d) {
-                  //console.log(d);
-                  return fill[d.id%3];
-              })
-			  .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
-              .on("mouseover", mouseover)
-              .on("mouseout", mouseout)
-              .on("click", click)
-              .call(force.drag);
-	  		      	
+
+        .enter().append("g")
+          .attr("class", "node").call(force.drag)
+          .append("circle")
+        .attr("cx", function (d) { return d.x; })
+        .attr("cy", function (d) { return d.y; })
+        .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
+        .style("fill", function (d) {
+            //console.log(d);
+            return fill[d.id%3];
+        })
+		.style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
+        .on("mouseover", mouseover)
+        .on("click", click);
+
+	  canvas.selectAll(".node")
+          .append("text")
+          .attr("dy", ".3em")
+          .style("text-anchor", "middle")
+          .text(function (d) { return d.movie.title })
+          .attr("class", "label");
+
+
+
 
 	  	function mouseover(d) {
 	  		$("#pop-up").fadeOut(100,function () {
