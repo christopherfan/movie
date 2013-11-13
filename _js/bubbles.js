@@ -88,24 +88,24 @@ function bubbles(list1, list2, list3) {
 
 		// Create the Nodes on the canvas
 	  var node = canvas.selectAll(".node")
-        .data(nodes)
+        .data(nodes)	  		      			
         .enter()
-		.append("circle")
-		.attr("class", "node")
-		.attr("cx", function (d) { return d.x; })
-		.attr("cy", function (d) { return d.y; })
-		.attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
-		.style("fill", function (d) {
-		  //console.log(d);
-		  return fill[d.id%3];
-			})
-		.style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
-		.on("mouseover", mouseover)
-		.on("mouseout", mouseout)
-		.on("click", click)
-		.call(force.drag);
-	  		      	
-		
+        .append("circle")
+        .attr("class", "node")
+        .attr("cx", function (d) { return d.x; })
+        .attr("cy", function (d) { return d.y; })
+        .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
+        .style("fill", function (d) {
+            //console.log(d);
+            return fill[d.id%3];
+        })
+    	.style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
+        .on("mouseover", mouseover)
+        .on("mouseout", mouseout)
+        .on("click", click)
+        .call(force.drag);
+
+
 		// Create Event handler to enable mouseover effect
 	  	function mouseover(d) {
 	  		$("#pop-up").fadeOut(100,function () {
