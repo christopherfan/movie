@@ -92,7 +92,7 @@ function bubbles(list1, list2, list3) {
 
 	  
 	  canvas.attr("width", width).attr("height", height);
-	  canvas.selectAll('circle').remove();
+	  canvas.selectAll('g').remove();
 	  var cursor = canvas.append("circle")
       .attr("r", 30)
       .attr("transform", "translate(-100,-100)")
@@ -123,6 +123,22 @@ function bubbles(list1, list2, list3) {
           .attr("class", "label");
 
 
+        //.enter()
+        //      .append("circle")
+        //      .attr("class", "node")
+        //      .attr("cx", function (d) { return d.x; })
+        //      .attr("cy", function (d) { return d.y; })
+        //      .attr("r", function (d) { return radiuScale(d.movie.num_ratings); })
+        //      .style("fill", function (d) {
+        //          //console.log(d);
+        //          return fill[d.id%3];
+        //      })
+		//	  .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
+        //      .on("mouseover", mouseover)
+        //      .on("mouseout", mouseout)
+        //      .on("click", click)
+        //      .call(force.drag);
+	  		      	
 
 
 	  	function mouseover(d) {
