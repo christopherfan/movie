@@ -58,3 +58,9 @@ text.shadow {
   stroke-width: 3px;
   stroke-opacity: .8;
 }   
+
+#category1, #category2, #category3 {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
