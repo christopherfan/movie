@@ -22,6 +22,7 @@
     <![endif]-->
   </head>
   <body>
+    
       <div class="page-header">
         <h1>Movie Together                <small>IO Lab Project 3</small></h1>
         <span>Christopher F, Chalenge M, Kelly P, Vanessa M</span>
@@ -31,33 +32,17 @@
       </div>
       <div class="main">
         <div class="col-md-6">
-          <form id="users-info">
+
+          <form id="users-info" method="POST">
             <h3>Tell us about You</h3>
+
             <label>Age</label>
-            <div class="btn-group" id="btnage1">
-              <button type="button" class="btn btn-default" value="1">10</button>
-              <button type="button" class="btn btn-default">20</button>
-              <button type="button" class="btn btn-default">30</button>
-              <button type="button" class="btn btn-default">40</button>
-              <button type="button" class="btn btn-default">50+</button>
-            </div>
- 
-            <select id="age1">
-              <option value="1">Less than 10</option>
-              <option value="2">10-19</option>
-              <option value="3" selected="selected">20-29</option>
-              <option value="4">30-39</option>
-              <option value="5">40-49</option>
-              <option value="6">50-59</option>
-              <option value="7">60-69</option>
-              <option value="8">70+</option>
-            </select>
+            <input id="age-text1" name="age" type='text' />
 
             <label>Gender</label>
-            <select id="gender1">
-              <option value="0" selected="selected">Male</option>
-              <option value="1">Female</option>
-            </select>
+            <input class="gender-radio-buttons1" id="gender-radio-0" name="gender" type="radio" value="0" /><label for="gender-radio-0">Male</label>
+            <input class="gender-radio-buttons1" id="gender-radio-1" name="gender" type="radio" value="1" /><label for="gender-radio-1">Female</label>
+
 
             <label>Occupation</label>
             <select id="occupation1">
@@ -79,33 +64,25 @@
               <option value="16">retired</option>
               <option value="17">salesman</option>
               <option value="18">scientist</option>
-              <option value="19" selected="selected">student</option>
+              <option value="19">student</option>
               <option value="20">technician</option>
               <option value="21">writer</option>
             </select><br>
+
           </form>
         </div>
         <div class="col-md-6">
-          <form id="users-info">
+          <form id="users-info" method="POST">
             <h3>...and your friend!</h3>
+
             <label>Age</label>
-            <select id="age2">
-              <option value="1">Less than 10</option>
-              <option value="2" selected="selected">10-19</option>
-              <option value="3">20-29</option>
-              <option value="4">30-39</option>
-              <option value="5">40-49</option>
-              <option value="6">50-59</option>
-              <option value="7">60-69</option>
-              <option value="8">70+</option>
-            </select>
+            <input id="age-text2" name="age" type='text' />
 
             <label>Gender</label>
-            <select id="gender2">
-              <option value="0">Male</option>
-              <option value="1" selected="selected">Female</option>
-            </select>
-            
+            <input class="gender-radio-buttons2" id="gender-radio-0" name="gender" type="radio" value="0" /><label for="gender-radio-0">Male</label>
+            <input class="gender-radio-buttons2" id="gender-radio-1" name="gender" type="radio" value="1" /><label for="gender-radio-1">Female</label>
+
+
             <label>Occupation</label>
             <select id="occupation2">
               <option value="1">administrator</option>
@@ -126,17 +103,15 @@
               <option value="16">retired</option>
               <option value="17">salesman</option>
               <option value="18">scientist</option>
-              <option value="19" selected="selected">student</option>
+              <option value="19">student</option>
               <option value="20">technician</option>
               <option value="21">writer</option>
             </select><br>
-        </div>
-            <input id = "submit-btn" type="submit" value="Submit">
-            <input type="button" value="Reset">
-
-      </div>       
 
           </form>
+      </div>       
+
+
 
      
 

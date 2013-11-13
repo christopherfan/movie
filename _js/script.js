@@ -4,7 +4,52 @@ var similar_users = similar_users_json;
 var users_movies = users_movies_json;
 
 $(document).ready(function() {
-       
+    	// -----------
+    var gender1 = -1;
+    var age1 = -1;
+    var job1 = 19;
+    var gender2 = -1;
+    var age2 = -1;
+    var job2 = 19;
+
+    var user1_data = [];
+    var user2_data = [];
+
+    $("#age-text1").change(function() {  //  CALLED WHEN age-text IS CHANGED.
+    raw = $("#age-text1").val();
+    var age1 = parseInt(raw / 10) + 1;
+    // console.log("age1: " + age1);
+    });
+
+    $(".gender-radio-buttons1").click(function() {   //  CALLED WHEN ANY of gender-radio-buttons IS CLICKED.
+    var value = $(this).prop("value");
+    // console.log("clicked radio button1's value: " + value);
+    gender1 = parseInt(value);   //  TURN value INTO INTEGER
+    });
+
+    $("#occupation1").change(function() {  //  CALLED WHEN job-select IS CHANGED.
+            job1 = $("#occupation1").val();
+            // console.log("job1: " + job1);
+    });
+
+    $("#age-text2").change(function() {  //  CALLED WHEN age-text IS CHANGED.
+    raw = $("#age-text2").val();
+    var age2 = parseInt(raw / 10) + 1;
+    // console.log("age2: " + age2);
+    });
+
+    $(".gender-radio-buttons2").click(function() {   //  CALLED WHEN ANY of gender-radio-buttons IS CLICKED.
+    var value = $(this).prop("value");
+    // console.log("clicked radio button2's value: " + value);
+    gender2 = parseInt(value);   //  TURN value INTO INTEGER
+    });
+
+    $("#occupation2").change(function() {  //  CALLED WHEN job-select IS CHANGED.
+            job2 = $("#occupation2").val();
+            // console.log("job2: " + job2);
+    });
+    // ------------
+   
     // Based on users input, lookup users they are similar to, generate list of
     // recommended movies for user1, user2, and movies both users will like. 
     // Then display the movie data in the visualization canvas.
