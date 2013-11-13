@@ -98,13 +98,9 @@ function bubbles(list1, list2, list3) {
       .attr("transform", "translate(-100,-100)")
       .attr("class", "cursor");
 
-	  /*setInterval(function(){ 
-	  	if (i < data.lenght) {
-	  			nodes.push(data[i]);
-	  			i+=1;*/
-	  
 	  var node = canvas.selectAll(".node")
         .data(nodes)
+
         .enter().append("g")
           .attr("class", "node").call(force.drag)
           .append("circle")
@@ -128,6 +124,7 @@ function bubbles(list1, list2, list3) {
 
 
 
+
 	  	function mouseover(d) {
 	  		$("#pop-up").fadeOut(100,function () {
 	  		    // Popup content
@@ -135,13 +132,17 @@ function bubbles(list1, list2, list3) {
 	  		    $("#pop-img").html(d.movie.num_ratings);
 	  		    $("#pop-desc").html(d.movie.imdb);
 
-	  		    // Popup position
-	  		    var popLeft = (d.x*scale)+trans[0]+70;//lE.cL[0] + 20;
-	  		    var popTop = (d.y*scale)+trans[1]+420;//lE.cL[1] + 70;
-	  		    //console.log(d.x, d.y, popLeft, popTop);
+	  		    // Popup position is aligned next to the node the mouse is over
+	  		    var popLeft = (d.x*scale)+trans[0]+70;
+	  		    var popTop = (d.y*scale)+trans[1]+420;
+
 	  		    $("#pop-up").css({"left":popLeft,"top":popTop});
-	  		    $("#pop-up").fadeIn(100);
+	  		    $("#pop-up").fadeIn(200);
 	  		});
+	  	}
+
+	  	function mouseout(d) {
+	  	        $("#pop-up").fadeOut(500);
 	  	}
 
 	  	function click(d) {
