@@ -12,7 +12,7 @@ We display the movie data by showing colored circles which represent movies. The
 
 When a user hovers over a movie circle, the title of the movie and the popularity score is shown. Clicking the hovercard will take the user to the movie's imdb page.
 
-The data is from the MovieLens 100K data set http://www.grouplens.org/datasets/movielens/
+The movie rating data is from the MovieLens 100K data set http://www.grouplens.org/datasets/movielens/
 
 
 ####Team Members, Roles, Technologies
