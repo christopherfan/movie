@@ -10,6 +10,10 @@ Our application leverages movie reviews collected from over 800 users to recomme
 
 We display the movie data by showing colored circles which represent movies. The size of the circle is determined by how popular the movie was (popularity score is a raw score of users who rated the movie either 4 or 5 stars). Movies on the left of the screen are movies that user1 might enjoy that user2 might not. Movies in the center are those that both people would enjoy. And movies on the right are movies user2 would enjoy that user2 might not.
 
+When a user hovers over a movie circle, the title of the movie and the popularity score is shown. Clicking the hovercard will take the user to the movie's imdb page.
+
+The data is from the MovieLens 100K data set http://www.grouplens.org/datasets/movielens/
+
 
 ####Team Members, Roles, Technologies
 
