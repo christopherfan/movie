@@ -30,7 +30,7 @@ function bubbles(list1, list2, list3) {
 
 	console.log(allMovies);
 	// Create the dimensions of the svg canvas
-	var width = 1200,
+	var width = 1400,
 	    height = 600,
 	    trans=[0,0],
 	    scale=1,
@@ -39,7 +39,7 @@ function bubbles(list1, list2, list3) {
 	    fill = ["lightcoral", "goldenrod", "steelblue"]
 	    // fill = ["blue", "orange", "red"] //d3.scale.category10(),
 		// foci are the points around the svg canvas where the node clusters will gather around
-		foci = [{ x: 300, y: 300 }, { x: 600, y: 300 }, { x: 900, y: 300 }, { x: 300, y: 200 }, { x: 600, y: 200 }, { x: 900, y: 200 }],
+		foci = [{ x: 350, y: 300 }, { x: 700, y: 300 }, { x: 1050, y: 300 }, { x: 300, y: 200 }, { x: 600, y: 200 }, { x: 900, y: 200 }],
 	    radiuScale = d3.scale.linear().domain([0, 500]).range([5,60]);
 
 	// Create nodes by pushing node elements to the node array. ID field denotes which cluster set to associate the node. Movie field contains the data for that node
@@ -59,7 +59,7 @@ function bubbles(list1, list2, list3) {
        .nodes(nodes)
        .size([width, height])
        .gravity(0)
-       .charge(-120)
+       .charge(-140)
        .alpha(-0.7);
 	
 	// tick function is called to generate the dynamic effects 
@@ -100,7 +100,7 @@ function bubbles(list1, list2, list3) {
             //console.log(d);
             return fill[d.id%3];
         })
-    	// .style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
+    	.style("stroke", function(d, i) { return d3.rgb(fill[d.id%3]).darker(4); })
         .on("mouseover", mouseover)
         .on("mouseout", mouseout)
         .on("click", click)
